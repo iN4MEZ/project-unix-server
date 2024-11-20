@@ -1,0 +1,286 @@
+syntax = "proto3";
+
+option csharp_namespace = "NMX.Protocal";
+
+message PlayerTokenCs {
+	string token = 1;
+}
+
+message PlayerTokenSc {
+	string msg = 1;
+}
+
+message ChangeTeamLineUpReq {
+	uint32 id = 1;
+}
+
+message ChangeTeamLineUpRsp {
+	uint32 retcode = 1;
+}
+
+message LoginReq {
+}
+
+message LoginRsp {
+	int32 id = 2;
+}
+
+message EnterGameRequest {
+}
+
+message AvatarDataNotify {
+
+}
+
+message EnterSceneReq {
+	int32 id = 1;
+}
+
+message EnterSceneRsp {
+	uint32 id = 1;
+}
+
+message GetSceneInfoReq {
+
+}
+
+message ReadyToChangeSceneCs {
+
+}
+
+message ChangeSceneSc {
+	uint32 id = 1;
+}
+
+message EnterSceneFinishCS {
+
+}
+
+message PlayerEnterSceneNotify {
+	uint32 hostId = 1;
+	EnterReason reason = 3;
+	SceneInfo scene_info = 4;
+}
+
+message PlayerChangeSceneNotify {
+	uint32 hostId = 1;
+	EnterReason reason = 3;
+	SceneInfo scene_info = 4;
+}
+
+message SceneInfo {
+	uint32 scene_id = 1;
+	Vector init_pos = 2;
+	Rotation init_rot = 3;
+}
+
+enum EnterReason {
+	ENTER_SELF = 0;
+	REJOIN_SELF = 1;
+	REQUEST_TO_OTHER = 2;
+}
+
+message PlayerEnterMpReq {
+	int64 toHost = 1;
+	bool isAgree = 2;
+}
+
+message PlayerEnterMpRsp {
+	int64 toHost = 1;
+	bool isAgree = 2;
+}
+
+message CscPlayerSync {
+	string player_state = 1;
+	Vector pos = 2;
+	int32 comboIndex = 4;
+	uint32 curAvatarActiveId = 5;
+}
+
+message EntityMoving {
+	uint32 entity_id = 1;
+	MovingInfo moveInfo = 2;
+
+}
+
+message CombatActionsReq {
+	uint32 entity_id = 1;
+	CombatActionInfo CA_info = 2;
+}
+
+message MovingInfo {
+	Vector pos = 1;
+	Rotation rot = 2;
+}
+
+message CombatActionInfo {
+
+}
+
+message PlayerDataSyncNotify {
+	CscPlayerSync dataBox = 1;
+	int32 curAnimationHash = 2;
+}
+
+message ScPlayerSync {
+}
+
+message PlayerSwitchActiveReq {
+	int32 index = 1;
+}
+message PlayerSwitchActiveRsp {
+	int32 index = 1;
+}
+
+message GetPlayerBaseInfoReq {
+
+}
+
+message GetPlayerBaseInfoRsp {
+	string name = 1;
+	int64 g_coins = 2;
+	int64 u_coins = 3;
+	PlayerProp prop = 4;
+}
+message GetMonsterData {
+	EntityInfo mInfo = 1;
+}
+
+message PlayerProp {
+	float moveSpeed = 1;
+}
+
+message GetAvatarDataReq {
+	bool isGetAll = 1;
+}
+
+message GetAvatarDataRsp {
+	repeated AvatarData avatarList = 2;
+}
+
+message GetInventoryData {
+
+}
+
+message GetQuestData {
+
+}
+
+message EntityInfo {
+	uint32 id = 1;
+	EntityType eType = 2;
+	string modelPath = 3;
+
+}
+enum EntityType {
+	MONSTER = 0;
+	AVATAR = 1;
+	NPC = 2;
+}
+enum EnterSceneStateInfo {
+	None = 0;
+	READY = 1;
+	PRE = 2;
+	POST = 3; 
+	ENTERFINISH = 4;
+}
+
+message EnterSceneReadyStateReq {
+
+}
+
+message EnterScenePreStateReq {
+
+}
+
+message EnterScenePostStateReq {
+
+}
+
+message EnterSceneFinishStateReq {
+
+}
+
+
+message GetTeamDataReq {
+}
+
+message GetTeamDataRsp {
+	TeamInfo teamInfo = 1;
+}
+
+message TeamInfo {
+	int32 teamIndex = 1;
+	repeated AvatarData avatarList = 2;
+
+}
+
+message EntityAppearNotify {
+	EntityInfo EntityList = 1;
+	AppearType appearType =2;
+}
+
+enum AppearType {
+	APPEAR_BORN = 0;
+	APPEAR_REMOVE = 1;
+}
+
+message ChestInteractionReq {
+	int32 chest_id = 1;
+}
+
+message ChestInteractionRsp {
+
+}
+
+message ChestInteractionNotify {
+	uint32 chest_id = 1;
+}
+
+message AvatarBinSkillInfo {
+	float baseAtk = 1;
+	float baseHp = 2;
+	uint32 baseDef =3;
+}
+
+message AvatarData {
+	string name = 1;
+	uint32 id = 2;
+	EntityInfo eInfo = 3;
+    AvatarBinSkillInfo sInfo = 4;
+}
+
+message Vector {
+	float x = 1;
+	float y = 2;
+	float z = 3;
+}
+
+message Rotation {
+	float q = 1;
+	float x = 2;
+	float y = 3;
+	float z = 4;
+}
+
+message PlayerBreathingReq {
+	uint32 ClientTime = 1;
+}
+message PlayerBreathingRsp {
+	uint32 ServerTime = 1;
+}
+
+message PlayerPositionNotify {
+	Vector pos = 1;
+	uint32 code = 2;
+}
+
+message ClientInitNotify {
+
+}
+
+message SceneEntityMovingUpdateNotify {
+	EntityInfo eInfo = 1;
+	Vector newPos = 2;
+	Rotation newRot = 3;
+}

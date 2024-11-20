@@ -1,0 +1,13 @@
+[
+{
+    "id": 10001,
+    "baseAtk": 12,
+    "baseHp": 1200,
+    "baseDef": 1000
+}, {
+    "id": 10002,
+    "baseAtk": 12,
+    "baseHp": 1200,
+    "baseDef": 1000
+}
+]

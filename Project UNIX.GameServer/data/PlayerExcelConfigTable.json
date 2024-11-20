@@ -1,0 +1,7 @@
+{
+  "PlayerGameObjectPath": "Entitys/Player/GameObjects/Player/Player",
+  "PlayerCamGameObjectPath": "Entitys/Player/GameObjects/Cam/PlayerCamera",
+  "PlayerProp": {
+    "BaseSpeed": 1
+  }
+}

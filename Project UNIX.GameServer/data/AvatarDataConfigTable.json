@@ -1,0 +1,25 @@
+{
+  "10001": {
+    "AvatarID": {
+      "Value": 10001
+    },
+    "SkillId": [
+      100011,
+      100012,
+      100013
+    ],
+    "AvatarModelLocationPath": "Entitys/Avatar/Prefabs/Models/TestAvatar01/CharacterModel"
+  },
+  "10002": {
+    "AvatarID": {
+      "Value": 10002
+    },
+    "SkillId": [
+      100021,
+      100022,
+      100023
+    ],
+    "AvatarModelLocationPath": "Entitys/Avatar/Prefabs/Models/TestAvatar02/CharacterModel"
+  }
+
+}
