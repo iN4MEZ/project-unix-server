@@ -10,7 +10,7 @@ namespace ProjectUNIX.GameServer.Network.NetCommand.NetCommandHandler
     [NetController]
     internal class TeamHandler : HandlerBase
     {
-        private uint[] teamTempoId = { 10001, 10002, 10003 };
+        private uint[] teamTempoId = { 10001, 10005 };
 
         [NetCommand(MessageId.GetTeamDataReq)]
         public ValueTask<IResult> GetTeamDataReq(NetSession session, GamePlayer player)
@@ -34,6 +34,16 @@ namespace ProjectUNIX.GameServer.Network.NetCommand.NetCommandHandler
             PlayerSwitchActiveRsp rsp = new PlayerSwitchActiveRsp { Index = req.Index };
 
             return ValueTask.FromResult(Response(MessageId.PlayerSwitchAvatarRsp, rsp));
+        }
+
+        [NetCommand(MessageId.GetAvatarDataReq)]
+        public ValueTask<IResult> GetAvatarData()
+        {
+            return ValueTask.FromResult(Response(MessageId.GetAvatarDataRsp, new GetAvatarDataRsp
+            {
+                AvatarList = { new AvatarData { Id = 10001 } }
+            }));
+
         }
     }
 }

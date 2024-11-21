@@ -71,15 +71,5 @@ namespace ProjectUNIX.GameServer.Network.NetCommand.NetCommandHandler
 
             }));
         }
-
-        [NetCommand(MessageId.GetAvatarDataReq)]
-        public ValueTask<IResult> GetAvatarData()
-        {
-            return ValueTask.FromResult(Response(MessageId.GetAvatarDataRsp, new GetAvatarDataRsp
-            {
-                AvatarList = { new AvatarData { Id = 1001 } }
-            }));
-
-        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using SharpCompress.Common;
 using System.Text;
 using System.Text.Json;
 
@@ -16,9 +17,26 @@ namespace Project_UNIX.AuthServer.Network.RoutesController
 
         public async Task<Task> UpdateVersion(HttpContext httpContext)
         {
-            var newVer = Encoding.UTF8.GetBytes("Congret you're new version Lol");
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "resources", "data.db");
 
-            await httpContext.Response.Body.WriteAsync(newVer, 0, newVer.Length);
+
+            if (!System.IO.File.Exists(filePath))
+            {
+                httpContext.Response.StatusCode = StatusCodes.Status404NotFound;
+                var errorMessage = Encoding.UTF8.GetBytes("File not found.");
+                await httpContext.Response.Body.WriteAsync(errorMessage, 0, errorMessage.Length);
+                return Task.CompletedTask;
+            }
+
+            // กำหนด Header สำหรับการดาวน์โหลดไฟล์
+            httpContext.Response.ContentType = "application/octet-stream";
+            httpContext.Response.Headers.Add("Content-Disposition", $"attachment; filename=\"data.db\"");
+
+            // อ่านไฟล์และเขียนลงไปใน Response Body
+            using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+            {
+                await stream.CopyToAsync(httpContext.Response.Body);
+            }
 
             return Task.CompletedTask;
         }
