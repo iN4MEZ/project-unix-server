@@ -4,6 +4,7 @@ using ProjectUNIX.GameServer.Game.Player;
 using ProjectUNIX.GameServer.Network.kcp.Session;
 using ProjectUNIX.GameServer.Network.NetCommand.NetAttribute;
 using ProjectUNIX.GameServer.Network.NetCommand.Result;
+using System.Numerics;
 
 namespace ProjectUNIX.GameServer.Network.NetCommand.NetCommandHandler
 {
@@ -39,9 +40,11 @@ namespace ProjectUNIX.GameServer.Network.NetCommand.NetCommandHandler
         [NetCommand(MessageId.GetAvatarDataReq)]
         public ValueTask<IResult> GetAvatarData()
         {
+
+
             return ValueTask.FromResult(Response(MessageId.GetAvatarDataRsp, new GetAvatarDataRsp
             {
-                AvatarList = { new AvatarData { Id = 10001 } }
+                AvatarList = { new AvatarData { Id = 10001 }, new AvatarData { Id = 10005 } }
             }));
 
         }
