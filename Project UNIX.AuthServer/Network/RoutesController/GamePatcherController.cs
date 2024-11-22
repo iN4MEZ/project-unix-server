@@ -10,7 +10,7 @@ namespace Project_UNIX.AuthServer.Network.RoutesController
         public async Task<Task> GameVersion(HttpContext httpContext)
         {
 
-            await httpContext.Response.WriteAsync("dev2");
+            await httpContext.Response.WriteAsync("monsterdatav1");
 
             return Task.CompletedTask;
         }

@@ -79,7 +79,7 @@ namespace ProjectUNIX.GameServer.Game.GameManager
         {
             _sceneId = sceneId;
 
-            SceneInfo sceneInfo = new SceneInfo { SceneId = _sceneId, InitPos = new Vector { X = 0, Y = 1, Z = 0 } };
+            SceneInfo sceneInfo = CreateSceneInfo(sceneId);
 
             await _session.NotifyAsync(MessageId.PlayerEnterSceneNotify,new PlayerEnterSceneNotify
             { HostId = _player.Id,Reason = reason, SceneInfo = sceneInfo });
@@ -123,6 +123,15 @@ namespace ProjectUNIX.GameServer.Game.GameManager
 
             await ChangeSceneNotifyAllAsync(target,2, EnterReason.RequestToOther);
 
+        }
+
+        public SceneInfo CreateSceneInfo(uint instanceId)
+        {
+            EntityInfo entityInfo = new EntityInfo { Id = 200001, EType = EntityType.Monster };
+
+            SceneInfo si = new SceneInfo { SceneId = instanceId, InitPos = new Vector { X = 0, Y = 0, Z = 0 }, EntityList = { entityInfo } };
+
+            return si;
         }
 
         public async ValueTask SpawnChestNotify(SceneObject obj)

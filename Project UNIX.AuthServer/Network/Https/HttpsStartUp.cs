@@ -30,7 +30,7 @@ namespace Project_UNIX.AuthServer.Network.Https
 
                 routes.MapGet("/patch/datav", context => app.ApplicationServices.GetRequiredService<GamePatcherController>().GameVersion(context));
 
-                routes.MapGet("/patch/dev2", context => app.ApplicationServices.GetRequiredService<GamePatcherController>().UpdateVersion(context));
+                routes.MapGet("/patch/monsterdatav1", context => app.ApplicationServices.GetRequiredService<GamePatcherController>().UpdateVersion(context));
             });
         }
 

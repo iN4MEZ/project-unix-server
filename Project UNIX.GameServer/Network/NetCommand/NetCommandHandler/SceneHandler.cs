@@ -11,12 +11,14 @@ namespace ProjectUNIX.GameServer.Network.NetCommand.NetCommandHandler
     internal class SceneHandler : HandlerBase
     {
         [NetCommand(MessageId.EnterSceneReq)]
-        public async ValueTask<IResult> EnterSceneReq(GamePlayer player,SceneModuleManager sceneModuleManager)
+        public ValueTask<IResult> EnterSceneReq(GamePlayer player,SceneModuleManager sceneModuleManager)
         {
 
-            EnterSceneRsp rsp = new EnterSceneRsp { Id = 3 };
+            var firstScene = sceneModuleManager.CreateSceneInfo(3);
 
-            return Response(MessageId.EnterSceneRsp,rsp);
+            EnterSceneRsp rsp = new EnterSceneRsp { SceneInfo = firstScene };
+
+            return ValueTask.FromResult(Response(MessageId.EnterSceneRsp, rsp));
         }
 
         [NetCommand(MessageId.ChestInteractionReq)]

@@ -33,18 +33,22 @@ message AvatarDataNotify {
 }
 
 message EnterSceneReq {
-	int32 id = 1;
-}
-
-message EnterSceneRsp {
 	uint32 id = 1;
 }
 
-message GetSceneInfoReq {
-
+message EnterSceneRsp {
+	SceneInfo scene_info = 1;
 }
 
-message ReadyToChangeSceneCs {
+message ChangeSceneReq {
+	uint32 id = 1;
+}
+
+message ChangeSceneRsp {
+	SceneInfo scene_info = 1;
+}
+
+message GetSceneInfoReq {
 
 }
 
@@ -52,9 +56,6 @@ message ChangeSceneSc {
 	uint32 id = 1;
 }
 
-message EnterSceneFinishCS {
-
-}
 
 message PlayerEnterSceneNotify {
 	uint32 hostId = 1;
@@ -72,6 +73,7 @@ message SceneInfo {
 	uint32 scene_id = 1;
 	Vector init_pos = 2;
 	Rotation init_rot = 3;
+	repeated EntityInfo entity_list = 4;
 }
 
 enum EnterReason {
@@ -169,7 +171,6 @@ message GetQuestData {
 message EntityInfo {
 	uint32 id = 1;
 	EntityType eType = 2;
-	string modelPath = 3;
 
 }
 enum EntityType {
