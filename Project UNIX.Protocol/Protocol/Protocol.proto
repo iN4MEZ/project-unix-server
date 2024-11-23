@@ -171,6 +171,7 @@ message GetQuestData {
 message EntityInfo {
 	uint32 id = 1;
 	EntityType eType = 2;
+	EntityAppearInfo apInfo =5;
 
 }
 enum EntityType {
@@ -218,12 +219,17 @@ message TeamInfo {
 
 message EntityAppearNotify {
 	EntityInfo EntityList = 1;
-	AppearType appearType =2;
 }
 
 enum AppearType {
 	APPEAR_BORN = 0;
 	APPEAR_REMOVE = 1;
+}
+
+message EntityAppearInfo {
+	Vector initPos = 1;
+	Rotation initRot = 2;
+	AppearType AppearType = 3;
 }
 
 message ChestInteractionReq {
@@ -249,6 +255,7 @@ message AvatarData {
 	uint32 id = 2;
 	EntityInfo eInfo = 3;
     AvatarBinSkillInfo sInfo = 4;
+	EntityAppearInfo apInfo =5;
 }
 
 message Vector {
