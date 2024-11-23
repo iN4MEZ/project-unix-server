@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Project_UNIX.AuthServer.Network.Https
+namespace Project_UNIX.SDKServer.Network.Https
 {
     internal class HttpsGateway : IGateway
     {

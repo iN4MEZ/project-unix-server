@@ -2,7 +2,7 @@
 using Project_UNIX.Common.Utils;
 using System.Text.Json;
 
-namespace Project_UNIX.AuthServer.Network.RoutesController
+namespace Project_UNIX.SDKServer.Network.RoutesController
 {
     internal class QueryDispatchController
     {

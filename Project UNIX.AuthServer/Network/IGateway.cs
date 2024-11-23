@@ -1,4 +1,4 @@
-﻿namespace Project_UNIX.AuthServer.Network
+﻿namespace Project_UNIX.SDKServer.Network
 {
     internal interface IGateway
     {

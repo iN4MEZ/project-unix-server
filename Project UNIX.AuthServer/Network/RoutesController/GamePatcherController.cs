@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
-using SharpCompress.Common;
 using System.Text;
-using System.Text.Json;
 
-namespace Project_UNIX.AuthServer.Network.RoutesController
+namespace Project_UNIX.SDKServer.Network.RoutesController
 {
     internal class GamePatcherController
     {

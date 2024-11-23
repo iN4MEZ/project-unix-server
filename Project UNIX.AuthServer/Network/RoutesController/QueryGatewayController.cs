@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Project_UNIX.AuthServer.Network.Model;
+using Project_UNIX.SDKServer.Network.Model;
 using Newtonsoft.Json;
 
-namespace Project_UNIX.AuthServer.Network.RoutesController
+namespace Project_UNIX.SDKServer.Network.RoutesController
 {
     internal class QueryGatewayController : IRoutesController
     {

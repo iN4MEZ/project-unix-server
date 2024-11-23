@@ -1,14 +1,12 @@
 ﻿using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Project_UNIX.Common.Database;
 
-namespace Project_UNIX.AuthServer.Network
+namespace Project_UNIX.SDKServer.Network
 {
-    internal class AuthServer : IHostedService
+    internal class SDKServer : IHostedService
     {
         private readonly IGateway _gateway;
 
-        public AuthServer(IGateway gateway) {
+        public SDKServer(IGateway gateway) {
             _gateway = gateway;
         }
         public async Task StartAsync(CancellationToken cancellationToken)

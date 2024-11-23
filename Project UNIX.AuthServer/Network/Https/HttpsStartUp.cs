@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Project_UNIX.AuthServer.Network.RoutesController;
+using Project_UNIX.SDKServer.Network.RoutesController;
 using Project_UNIX.Common.Database;
 using Project_UNIX.Common.Server;
 using Project_UNIX.Common.Validator.Token;
 
-namespace Project_UNIX.AuthServer.Network.Https
+namespace Project_UNIX.SDKServer.Network.Https
 {
     internal class HttpsStartUp : IStartup
     {

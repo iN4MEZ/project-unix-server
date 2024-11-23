@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project UNIX.GameServer", "Project UNIX.GameServer.csproj", "{88B9A653-51F2-44C0-B4A2-D0B7118B7D7E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project UNIX.AuthServer", "..\Project UNIX.AuthServer\Project UNIX.AuthServer.csproj", "{D333B28E-C7DF-4F9C-9D4F-5DDE1845C163}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project UNIX.SDKServer", "..\Project UNIX.AuthServer\Project UNIX.SDKServer.csproj", "{D333B28E-C7DF-4F9C-9D4F-5DDE1845C163}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project UNIX.Common", "..\Project UNIX.Common\Project UNIX.Common.csproj", "{984829A4-96A1-4F05-8BC0-48382ADF0840}"
 EndProject

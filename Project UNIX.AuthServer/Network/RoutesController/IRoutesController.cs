@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_UNIX.AuthServer.Network.RoutesController
+namespace Project_UNIX.SDKServer.Network.RoutesController
 {
     internal interface IRoutesController
     {

@@ -5,7 +5,7 @@ using Project_UNIX.Common.Database.Models;
 using Project_UNIX.Common.Server;
 using Project_UNIX.Common.Validator.Token;
 
-namespace Project_UNIX.AuthServer.Network.RoutesController
+namespace Project_UNIX.SDKServer.Network.RoutesController
 {
     internal class LoginController : IRoutesController
     {

@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using Project_UNIX.Common.Database.Models;
 using Project_UNIX.Common.Server;
 
-namespace Project_UNIX.AuthServer.Network.RoutesController
+namespace Project_UNIX.SDKServer.Network.RoutesController
 {
     internal class RegisterController : IRoutesController
     {

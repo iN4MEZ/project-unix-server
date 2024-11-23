@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_UNIX.AuthServer.Network.MiddlewareController
+namespace Project_UNIX.SDKServer.Network.MiddlewareController
 {
     internal class AuthVerify
     {

@@ -1,4 +1,4 @@
-﻿namespace Project_UNIX.AuthServer.Network.Model
+﻿namespace Project_UNIX.SDKServer.Network.Model
 {
     internal class GatewayModel
     {
