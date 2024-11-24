@@ -204,10 +204,11 @@ message EnterSceneFinishStateReq {
 }
 
 
-message GetTeamDataReq {
+message GetTeamLineupDataReq {
+	uint32 id = 1;
 }
 
-message GetTeamDataRsp {
+message GetTeamLineupDataRsp {
 	TeamInfo teamInfo = 1;
 }
 

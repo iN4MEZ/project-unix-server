@@ -127,7 +127,7 @@ namespace ProjectUNIX.GameServer.Game.GameManager
 
         public SceneInfo CreateSceneInfo(uint instanceId)
         {
-            EntityInfo entityInfo = new EntityInfo { Id = 200001, EType = EntityType.Monster,ApInfo = new EntityAppearInfo { InitPos = new Vector { X = 1,Y =1, Z = 1 } } };
+            EntityInfo entityInfo = new EntityInfo { Id = 200001, EType = EntityType.Monster,ApInfo = new EntityAppearInfo { InitPos = new Vector { X = 1,Y =10, Z = 1 } } };
 
             SceneInfo si = new SceneInfo { SceneId = instanceId, InitPos = new Vector { X = 0, Y = 0, Z = 0 }, EntityList = { entityInfo } };
 

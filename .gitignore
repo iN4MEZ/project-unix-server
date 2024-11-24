@@ -402,3 +402,4 @@ FodyWeavers.xsd
 *.sln.iml
 /Project UNIX.GameServer/.vs
 *.vs/
+/data

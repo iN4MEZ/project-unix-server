@@ -38,7 +38,7 @@ namespace ProjectUNIX.GameServer.Game.Avatar
             {
                 TeamInfo team = new TeamInfo
                 {
-                    TeamIndex = 0,
+                    TeamIndex = 1,
                 };
                 foreach (TeamMember member in Members)
                 {
